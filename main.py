@@ -2,7 +2,7 @@ import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, TextStreamer
 
 checkpoint = "Deci/DeciLM-6b"
-device = "cpu" # for GPU usage or "cpu" for CPU usage
+device = "gpu" # for GPU usage or "cpu" for CPU usage
 
 tokenizer = AutoTokenizer.from_pretrained(checkpoint)
 model = AutoModelForCausalLM.from_pretrained(checkpoint, torch_dtype=torch.bfloat16, trust_remote_code=True).to(device)
